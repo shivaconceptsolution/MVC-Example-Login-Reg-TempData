@@ -1,0 +1,26 @@
+﻿@model IEnumerable<MvcApplication2.Models.Registration>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    @Html.ActionLink("Logout","Logout")
+    <div>
+        <h1>View All User Details</h1>
+        <table border="1">
+          <tr><th>USERID</th><th>PASSWORD</th><th>EMAILID</th><th>FULLNAME</th></tr>
+         @foreach (var item in Model)
+         {
+             <tr><td>@Html.DisplayFor(a=>item.UserId)</td><td>@Html.DisplayFor(a=>item.Pass)</td><td>@Html.DisplayFor(a=>item.Email)</td><td>@Html.DisplayFor(a=>item.Fullname)</td><td>@Html.ActionLink("Edit","EditReg",new {id=item.UserId})</td><td>@Html.ActionLink("Delete","DeleteReg",new {id=item.UserId})</td></tr>
+         }
+        </table>
+    </div>
+</body>
+</html>

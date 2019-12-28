@@ -1,0 +1,29 @@
+﻿@model MvcApplication2.Models.Registration
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div>
+        @using (Html.BeginForm())
+        {
+             <table border="1">
+             <tr><td>Enter UserID</td><td>@Html.TextBoxFor(a=>a.UserId)</td></tr>
+             <tr><td>Enter Password</td><td>@Html.PasswordFor(a=>a.Pass)</td></tr>
+              <tr><td>Enter EmailID</td><td>@Html.TextBoxFor(a=>a.Email)</td></tr>
+             <tr><td>Enter Fullname</td><td>@Html.TextBoxFor(a=>a.Fullname)</td></tr>
+             <tr><td colspan="2"><input type="submit" name="btnsubmit" value="Register" >  </td></tr>
+             </table>
+
+        }
+        @ViewBag.data
+    </div>
+</body>
+</html>
